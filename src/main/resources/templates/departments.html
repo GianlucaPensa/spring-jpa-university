@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="utilities :: head"></div>
+	<title>Countries</title>
+</head>
+<body>
+	<div class="container">
+	<h1>Departments</h1>
+	<hr/>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Address</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Email</th>
+				<th scope="col">Website</th>
+				<th scope="col">Head of Department</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="department : ${departments}">
+				<td th:text="${department.name}"></td>	
+				<td th:text="${department.address}"></td>
+				<td th:text="${department.phone}"></td>
+				<td th:text="${department.email}"></td>
+				<td th:text="${department.website}"></td>
+				<td th:text="${department.headOfDepartment}"></td>	
+				
+			</tr>
+		</tbody>
+	</table>
+	<div th:replace="utilities :: scripts"></div>
+	</div>
+</body>
+</html>
