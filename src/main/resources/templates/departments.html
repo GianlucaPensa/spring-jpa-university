@@ -21,13 +21,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="department : ${departments}">
-				<td th:text="${department.name}"></td>	
-				<td th:text="${department.address}"></td>
-				<td th:text="${department.phone}"></td>
-				<td th:text="${department.email}"></td>
-				<td th:text="${department.website}"></td>
-				<td th:text="${department.headOfDepartment}"></td>	
+			<tr th:each="item : ${departments}">
+				<td th:text="${item.name}"></td>	
+				<td th:text="${item.address}"></td>
+				<td th:text="${item.phone}"></td>
+				<td th:text="${item.email}"></td>
+				<td th:text="${item.website}"></td>
+				<td th:text="${item.headOfDepartment}"></td>
+				<td><a class="btn btn-success" th:href="@{|/department/${item.id}|}">Details</a></td>	
 				
 			</tr>
 		</tbody>

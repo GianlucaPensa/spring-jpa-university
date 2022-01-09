@@ -1,40 +1,27 @@
 package org.generation.italy.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="departments")
-public class Department {
-		
+@Table(name="degrees")
+public class Degree {
+	
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String name;
+	private String level;
 	private String address;
-	private String phone;
 	private String email;
 	private String website;
 	
-	@Column(name="head_of_department")
-	private String headOfDepartment;
-	
-	@OneToMany
-	@JoinColumn(name="department_id")
-	private List<Degree> degrees;
-    
-	
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -51,20 +38,20 @@ public class Department {
 		this.name = name;
 	}
 
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
 	public String getAddress() {
 		return address;
 	}
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -83,21 +70,4 @@ public class Department {
 		this.website = website;
 	}
 
-	public String getHeadOfDepartment() {
-		return headOfDepartment;
-	}
-
-	public void setHeadOfDepartment(String headOfDepartment) {
-		this.headOfDepartment = headOfDepartment;
-	}
-	
-	public List<Degree> getDegrees() {
-		return degrees;
-	}
-
-	public void setDegrees(List<Degree> degrees) {
-		this.degrees = degrees;
-	}
-	
-	
 }
